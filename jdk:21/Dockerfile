@@ -1,4 +1,4 @@
-FROM jdk:base
+FROM ghcr.io/yankeguo/acicn/jdk:base-240729-2245
 
 ENV JAVA_VERSION=21
 ENV JRE_VERSION="${JAVA_VERSION}"
@@ -10,4 +10,4 @@ RUN apt-get update && \
 
 ENV JAVA_HOME="/usr/lib/jvm/temurin-${JDK_VERSION}-jdk-amd64"
 
-RUN "${JAVA_HOME}/bin/java" -version && echo "JAVA_HOME: OK"
+RUN "${JAVA_HOME}/bin/java" -version && echo "JAVA_HOME: OK" && as.sh --version && echo "AS: OK"
