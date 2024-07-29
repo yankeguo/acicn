@@ -10,4 +10,4 @@ RUN apt-get update && \
 
 ENV JAVA_HOME="/usr/lib/jvm/temurin-${JDK_VERSION}-jdk-amd64"
 
-RUN "${JAVA_HOME}/bin/java" -version && echo "JAVA_HOME: OK" && as.sh --version && echo "AS: OK"
+RUN "${JAVA_HOME}/bin/java" -version && echo "JAVA_HOME: OK" && as.sh --help && echo "AS: OK"
