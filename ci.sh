@@ -16,7 +16,7 @@ case "$1" in
     echo "tag=${ADDR[1]}-${ADDR[2]}"
     ;;
 "create-tag")
-    TAG_NAME="${2//:/--}--$(date '+%Y%m%d%H%M')"
+    TAG_NAME="${2//:/--}--$(date '+%y%m%d-%H%M')"
     git tag -m "$TAG_NAME" "$TAG_NAME"
     git push origin "$TAG_NAME"
     ;;
