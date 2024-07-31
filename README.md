@@ -18,8 +18,8 @@ Series of Container Images with Advanced Features
     - `jmx_prometheus_javaagent:0.16.1`
     - `skywalking-agent:custom-20231214`
 - JDK 21
-  - `ghcr.io/yankeguo/acicn/jdk:21-240729-2303`
-    - from `acicn/jdk:base-240729-2245`
+  - `ghcr.io/yankeguo/acicn/jdk:21-240731-1031`
+    - from `acicn/jdk:base-240731-1026`
 
 ## Credits
 
