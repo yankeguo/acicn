@@ -4,8 +4,8 @@ Series of Container Images with Advanced Features
 
 ## Debian
 
-- `ghcr.io/yankeguo/acicn/debian:12-240729-2154`
-  - `minit:1.14.0-rc1` as entrypoint
+- `ghcr.io/yankeguo/acicn/debian:12-240731-1022`
+  - `minit:1.14.0-rc2` as entrypoint
   - `tini`
 
 ## JDK
