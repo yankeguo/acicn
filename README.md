@@ -20,6 +20,9 @@ Series of Container Images with Advanced Features
 - JDK 21
   - `ghcr.io/yankeguo/acicn/jdk:21-240731-1031`
     - from `acicn/jdk:base-240731-1026`
+- JDK 8
+  - `ghcr.io/yankeguo/acicn/jdk:8-240801-1850`
+    - from `acicn/jdk:base-240731-1026`
 
 ## Credits
 
