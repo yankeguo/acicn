@@ -1,0 +1,12 @@
+name: nacos-conf
+kind: render
+group: nacos
+files:
+  - /opt/nacos/conf.template:*:/opt/nacos/conf
+---
+name: nacos
+kind: daemon
+group: nacos
+dir: /opt/nacos
+command:
+  - /opt/nacos/bin/docker-entrypoint.sh
