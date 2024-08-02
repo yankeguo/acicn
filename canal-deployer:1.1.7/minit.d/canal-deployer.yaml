@@ -1,0 +1,12 @@
+name: canal-deployer-conf
+group: canal
+kind: render
+files:
+  - /opt/canal-deployer/conf.template:*:/opt/canal-deployer/conf
+---
+name: canal-deployer
+group: canal
+kind: daemon
+dir: /opt/canal-deployer
+command:
+  - /opt/canal-deployer/bin/docker-entrypoint.sh
