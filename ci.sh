@@ -24,6 +24,12 @@ case "$1" in
     git tag -d "$2"
     git push origin --delete "$2"
     ;;
+"build")
+    docker build -t "$(basename $(pwd))" .
+    ;;
+"run")
+    docker run --rm "$(basename $(pwd))"
+    ;;
 *)
     echo "Unknown command: $1"
     exit 1
