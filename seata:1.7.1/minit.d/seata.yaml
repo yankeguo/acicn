@@ -1,3 +1,9 @@
+name: seata-conf
+group: seata
+kind: render
+files:
+  - /opt/seata/conf.template:*:/opt/seata/conf
+---
 name: seata
 group: seata
 kind: daemon

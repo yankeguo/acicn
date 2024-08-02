@@ -23,7 +23,8 @@ ENV SEATA_VERSION 1.7.1
 
 RUN curl -sSL -o seata.tar.gz "https://github.com/apache/incubator-seata/releases/download/v${SEATA_VERSION}/seata-server-${SEATA_VERSION}.tar.gz" && \
     tar -xvf seata.tar.gz --strip-components=1 && \
-    rm -f seata.tar.gz
+    rm -f seata.tar.gz && \
+    rm -rf conf/application*
 
 ADD seata ./
 
@@ -38,3 +39,23 @@ ADD minit.d /etc/minit.d
 # ENV SEATA_MEMORY_OPTS="-Xms512m -Xmx512m -Xmn256m"
 
 # ENV SEATA_ARGS=""
+
+####################################
+# Application Properties
+####################################
+
+ENV SEATA_CONF_server.port="7091"
+ENV SEATA_CONF_spring.application.name="seata-server"
+ENV SEATA_CONF_logging.config="classpath:logback-spring.xml"
+ENV SEATA_CONF_logging.file.path="\${log.home}"
+ENV SEATA_CONF_logging.extend.logstash-appender.destination="127.0.0.1:4560"
+ENV SEATA_CONF_logging.extend.kafka-appender.bootstrap-servers="127.0.0.1:9092"
+ENV SEATA_CONF_logging.extend.kafka-appender.topic="logback_to_logstash"
+ENV SEATA_CONF_console.user.username="seata"
+ENV SEATA_CONF_console.user.password="seata"
+ENV SEATA_CONF_seata.config.type="file"
+ENV SEATA_CONF_seata.registry.type="file"
+ENV SEATA_CONF_seata.store.mode="file"
+ENV SEATA_CONF_seata.security.secretKey="SeataSecretKey0c382ef121d778043159209298fd40bf3850a017"
+ENV SEATA_CONF_seata.security.tokenValidityInMilliseconds="1800000"
+ENV SEATA_CONF_seata.security.ignore.urls="/,/**/*.css,/**/*.js,/**/*.html,/**/*.map,/**/*.svg,/**/*.png,/**/*.jpeg,/**/*.ico,/api/v1/auth/login"

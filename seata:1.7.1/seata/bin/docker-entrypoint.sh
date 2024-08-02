@@ -36,7 +36,15 @@ JAVA_OPTS="${JAVA_OPTS} -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=${LOGS_
 JAVA_OPTS="${JAVA_OPTS} -Xlog:gc=trace:file=${LOGS_DIR}/seata_gc.log:time,tags:filecount=10,filesize=10M"
 JAVA_OPTS="${JAVA_OPTS} -Dio.netty.leakDetectionLevel=advanced"
 JAVA_OPTS="${JAVA_OPTS} -Dapp.name=seata-server -Dapp.pid=${$} -Dapp.home=${BASE_DIR} -Dbasedir=${BASE_DIR}"
-JAVA_OPTS="${JAVA_OPTS} -Dspring.config.additional-location=${BASE_DIR}/conf/ -Dspring.config.location=${BASE_DIR}/conf/application.yml -Dlogging.config=${BASE_DIR}/conf/logback-spring.xml"
+
+JAVA_OPTS="${JAVA_OPTS} -Dspring.config.additional-location=${BASE_DIR}/conf/ -Dlogging.config=${BASE_DIR}/conf/logback-spring.xml"
+
+if [ -f "${BASE_DIR}/conf/application.properties" ]; then
+    JAVA_OPTS="${JAVA_OPTS} -Dspring.config.location=${BASE_DIR}/conf/application.properties"
+elif [ -f "${BASE_DIR}/conf/application.yml" ]; then
+    JAVA_OPTS="${JAVA_OPTS} -Dspring.config.location=${BASE_DIR}/conf/application.yml"
+fi
+
 JAVA_OPTS="${JAVA_OPTS} -jar ${BASE_DIR}/target/seata-server.jar"
 
 echo "Starting Seata with JVM options: java ${JAVA_OPTS} ${SEATA_ARGS:-}"
