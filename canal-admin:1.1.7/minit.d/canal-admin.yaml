@@ -1,0 +1,12 @@
+name: canal-admin-conf
+group: canal
+kind: render
+files:
+  - /opt/canal-admin/conf.template:*:/opt/canal-admin/conf
+---
+name: canal-admin
+group: canal
+kind: daemon
+dir: /opt/canal-admin
+command:
+  - /opt/canal-admin/bin/docker-entrypoint.sh
