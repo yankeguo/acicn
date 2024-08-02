@@ -1,0 +1,6 @@
+name: seata
+group: seata
+kind: daemon
+dir: /opt/seata
+command:
+  - /opt/seata/bin/docker-entrypoint.sh
