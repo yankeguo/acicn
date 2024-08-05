@@ -1,0 +1,21 @@
+name: zookeeper-conf
+kind: render
+group: zookeeper
+files:
+  - /opt/zookeeper/conf.template:*:/opt/zookeeper/conf
+---
+name: zookeeper-write-myid
+kind: once
+group: zookeeper
+shell: "bash -eux"
+command:
+  - mkdir -p ${ZKCFG_dataDir}
+  - echo ${ZKAUTOCFG_MYID} > ${ZKCFG_dataDir}/myid
+---
+name: zookeeper
+kind: daemon
+group: zookeeper
+dir: /opt/zookeeper
+command:
+  - /opt/zookeeper/bin/docker-entrypoint.sh
+  - start-foreground
