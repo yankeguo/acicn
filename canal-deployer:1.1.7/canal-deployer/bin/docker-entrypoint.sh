@@ -6,6 +6,9 @@
 
 set -eu
 
+# working directory must be the 'bin'
+cd "$(dirname "$0")"
+
 export JAVA_HOME
 export JAVA="$JAVA_HOME/bin/java"
 export BASE_DIR=$(
