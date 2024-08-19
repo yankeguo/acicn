@@ -1,0 +1,6 @@
+name: nginx
+kind: daemon
+command:
+  - /sbin/nginx
+  - -g
+  - "daemon off;"

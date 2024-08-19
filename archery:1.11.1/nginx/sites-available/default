@@ -1,0 +1,28 @@
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    server_name _;
+
+    client_max_body_size 256m;
+    proxy_read_timeout 600s;
+
+    root /var/www/html;
+    index index.html index.htm;
+
+    location / {
+        proxy_pass http://127.0.0.1:8888;
+        # not setting other proxy_* directives, since we are deploying on kubernetes
+    }
+
+    location /static {
+        alias /opt/archery/static;
+    }
+
+    error_page 404 /404.html;
+    location = /40x.html {
+    }
+
+    error_page 500 502 503 504 /50x.html;
+    location = /50x.html {
+    }
+}

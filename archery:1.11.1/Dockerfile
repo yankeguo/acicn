@@ -3,7 +3,7 @@ FROM ghcr.io/yankeguo/acicn/debian:12-240731-1022
 RUN apt-get update && \
     apt-get install -y --no-install-recommends python3 python3-pip python3-venv python3-setuptools python3-wheel \
     python3-dev build-essential pkgconf mariadb-client libmariadb-dev libkrb5-dev libsasl2-dev libldap2-dev libssl-dev \
-    unixodbc && \
+    unixodbc nginx-light && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /opt/archery
@@ -18,3 +18,4 @@ RUN curl -sSL -o archery.tar.gz 'https://github.com/hhyo/Archery/archive/refs/ta
     bash -c 'source ./venv/bin/activate && pip install --upgrade pip && pip install wheel setuptools && pip install -r requirements.txt'
 
 ADD minit.d /etc/minit.d
+ADD nginx   /etc/nginx
