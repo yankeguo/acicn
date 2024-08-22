@@ -18,7 +18,7 @@ case "$1" in
 "create-tag")
     TAG_NAME="${2//:/--}--$(date '+%y%m%d-%H%M')"
     git tag -m "$TAG_NAME" "$TAG_NAME"
-    git push origin "$TAG_NAME"
+    git push --tags main:main
     ;;
 "delete-tag")
     git tag -d "$2"

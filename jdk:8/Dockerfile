@@ -1,4 +1,4 @@
-FROM ghcr.io/yankeguo/acicn/jdk:base-240731-1026
+FROM ghcr.io/yankeguo/acicn/jdk:base-240822-1316
 
 ENV JAVA_VERSION=8
 ENV JRE_VERSION="${JAVA_VERSION}"
