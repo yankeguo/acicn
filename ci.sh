@@ -25,10 +25,11 @@ case "$1" in
     git push origin --delete "$2"
     ;;
 "build")
-    docker build -t "$(basename $(pwd))" .
+    docker build -t "acicn-$(basename $(pwd))" .
     ;;
 "run")
-    docker run --rm "$(basename $(pwd))"
+    shift
+    docker run --rm $@ "acicn-$(basename $(pwd))"
     ;;
 *)
     echo "Unknown command: $1"
