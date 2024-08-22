@@ -1,4 +1,4 @@
-FROM ghcr.io/yankeguo/minit:1.14.0-rc2 AS utils-minit
+FROM ghcr.io/yankeguo/minit:1.15.2 AS utils-minit
 
 FROM debian:12
 
@@ -8,7 +8,10 @@ RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y locales locales-all tzdata ca-certificates vim curl procps net-tools unzip \
     ncat telnet socat apache2-utils tini && \
-    rm -rf /var/lib/apt/lists/*
+    rm -rf /var/lib/apt/lists/* && \
+    TZ=Asia/Shanghai && \
+    echo $TZ > /etc/timezone && \
+    ln -sf /usr/share/zoneinfo/$TZ /etc/localtime
 
 RUN mkdir -p /opt/bin
 ENV PATH="/opt/bin:${PATH}"
