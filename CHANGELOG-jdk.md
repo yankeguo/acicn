@@ -1,3 +1,7 @@
+## jdk:8-240826-1208
+
+- From `jdk:base-240826-1203`
+
 ## jdk:base-240826-1203
 
 - let skywalking agent log to console
