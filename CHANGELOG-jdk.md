@@ -1,3 +1,7 @@
+## jdk:base-240826-1203
+
+- let skywalking agent log to console
+
 ## jdk:base-240826-1147
 
 - fix non-root user issue
