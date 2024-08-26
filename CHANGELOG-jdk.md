@@ -1,3 +1,7 @@
+## jdk:base-240826-1147
+
+- fix non-root user issue
+
 ## jdk:21-240822-1333
 
 - From `jdk:base-240822-1316`

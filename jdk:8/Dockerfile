@@ -1,4 +1,4 @@
-FROM ghcr.io/yankeguo/acicn/jdk:base-240822-1316
+FROM ghcr.io/yankeguo/acicn/jdk:base-240826-1147
 
 ENV JAVA_VERSION=8
 ENV JRE_VERSION="${JAVA_VERSION}"
@@ -10,4 +10,9 @@ RUN apt-get update && \
 
 ENV JAVA_HOME="/usr/lib/jvm/temurin-${JDK_VERSION}-jdk-amd64"
 
-RUN "${JAVA_HOME}/bin/java" -version && echo "JAVA_HOME: OK" && as.sh --help && echo "AS: OK"
+RUN "${JAVA_HOME}/bin/java" -version && \
+    java -version && \
+    java-wrapper -version && \
+    echo "JAVA_HOME: OK" && \
+    as.sh --help && \
+    echo "AS: OK"

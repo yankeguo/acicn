@@ -1,4 +1,4 @@
-FROM ghcr.io/yankeguo/acicn/assets:skywalking-agent-custom-20231214-2 AS utils-skywalking-agent-custom
+FROM ghcr.io/yankeguo/acicn/assets:skywalking-agent-custom-20231214-3 AS utils-skywalking-agent-custom
 FROM ghcr.io/yankeguo/acicn/debian:12-240826-1115
 
 # Adoptium Repository
