@@ -16,6 +16,5 @@ RUN apt-get update && \
 RUN mkdir -p /opt/bin
 ENV PATH="/opt/bin:${PATH}"
 COPY --from=utils-minit /minit /opt/bin/minit
-ENV MINIT_LOG_DIR=none
 
 ENTRYPOINT ["/opt/bin/minit"]
