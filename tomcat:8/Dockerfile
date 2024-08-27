@@ -1,22 +1,22 @@
+FROM tomcat:8.5.100 AS upstream
+
 FROM ghcr.io/yankeguo/acicn/jdk:8-240826-1208
+
+# vanilla tomcat
+COPY --from=upstream /usr/local/tomcat /usr/local/tomcat
+
+ENV TOMCAT_MAJOR=8
+ENV TOMCAT_VERSION=8.5.100
+ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
+ENV LD_LIBRARY_PATH="${TOMCAT_NATIVE_LIBDIR}:${LD_LIBRARY_PATH}"
+ENV PATH="/work/tomcat/bin:/usr/local/tomcat/bin:${PATH}"
 
 WORKDIR /usr/local/tomcat
 
-RUN apt-get update && \
-    apt-get install -y libtcnative-1 && \
-    rm -rf /var/lib/apt/lists/* && \
-    curl -sSL -o tomcat.tar.gz 'https://archive.apache.org/dist/tomcat/tomcat-8/v8.5.100/bin/apache-tomcat-8.5.100.tar.gz' && \
-    tar -xf tomcat.tar.gz --strip-components=1 && \
-    rm -rf tomcat.tar.gz webapps/* && \
-    curl -sSL -o webapps/ROOT.war 'https://github.com/yankeguo/EmptyWar/releases/download/v2.0.0/EmptyWar-2.0.0.war' && \
-    chmod -R o=g .
-
+# extra configuration
 ADD bin bin
 ADD conf.template conf.template
-
-ENV PATH="/usr/local/tomcat/bin:${PATH}"
-
-ENV TOMCAT_VERSION="8"
+RUN curl -sSL -o webapps/ROOT.war 'https://github.com/yankeguo/EmptyWar/releases/download/v2.0.0/EmptyWar-2.0.0.war'
 
 ENV TOMCATCFG_SERVER_CONNECTOR_port="8080"
 ENV TOMCATCFG_SERVER_CONNECTOR_protocol="HTTP/1.1"
