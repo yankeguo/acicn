@@ -32,5 +32,5 @@ ADD etc/jmx_prometheus_javaagent /opt/etc/jmx_prometheus_javaagent
 COPY --from=utils-skywalking-agent-custom /opt/lib/skywalking-agent /opt/lib/skywalking-agent
 
 # Stress
-RUN curl -sSL -o /opt/EmptyJar.jar "https://github.com/yankeguo/EmptyJar/releases/download/v1.0.1/EmptyJar-1.0.1.jar"
+RUN curl -sSL -o /opt/EmptyJar.jar "https://github.com/yankeguo/EmptyJar/releases/download/v2.0.0/EmptyJar.jar"
 ADD stress.sh /stress.sh
