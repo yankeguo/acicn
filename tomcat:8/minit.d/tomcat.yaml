@@ -1,8 +1,7 @@
 name: tomcat-render-conf
 kind: render
 files:
-  - /usr/local/tomcat/conf/server.xml
-  - /usr/local/tomcat/conf/logging.properties
+  - /usr/local/tomcat/conf.template:/usr/local/tomcat/conf
 ---
 name: tomcat
 kind: daemon

@@ -12,12 +12,14 @@ RUN apt-get update && \
 
 ENV PATH="/usr/local/tomcat/bin:${PATH}"
 
-ADD conf conf
+ADD conf.template conf.template
 ADD minit.d /etc/minit.d
 ADD scripts /opt/bin
 ADD stress.sh /stress.sh
 
-RUN chmod -R a=g /usr/local/tomcat && chmod -R 777 conf webapps logs work temp
+RUN mkdir -p conf && \
+    chmod -R a=g . && \
+    chmod -R 777 conf.template conf webapps logs work temp
 
 ENV TOMCAT_VERSION="8"
 ENV TOMCATCFG_SERVER_CONNECTOR_port="8080"
