@@ -1,11 +1,19 @@
-name: tomcat-render-conf
+name: tomcat-render
 kind: render
 files:
-  - /usr/local/tomcat/conf.template:/usr/local/tomcat/conf
+  - /usr/local/tomcat/conf.template:/work/conf.rendered
+---
+name: tomcat-setup
+kind: once
+shell: "/bin/bash"
+command:
+  - mkdir -p /work/tomcat /work/tomcat/conf
+  - cp -rn /work/conf.rendered/* /work/tomcat/conf
+  - cp -rn /usr/local/tomcat/* /work/tomcat
 ---
 name: tomcat
 kind: daemon
-dir: /usr/local/tomcat
+dir: /work/tomcat
 command:
-  - catalina-wrapper
+  - ./bin/catalina-wrapper.sh
   - run

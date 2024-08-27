@@ -21,4 +21,4 @@ done
 
 export JAVA_OPTS
 
-exec catalina.sh "$@"
+exec "$(dirname "$0")/catalina.sh" "$@"
