@@ -16,7 +16,7 @@ WORKDIR /usr/local/tomcat
 # extra configuration
 ADD bin bin
 ADD conf.template conf.template
-RUN curl -sSL -o webapps/ROOT.war 'https://github.com/yankeguo/EmptyWar/releases/download/v2.0.0/EmptyWar-2.0.0.war'
+RUN curl -sSL -o webapps/ROOT.war 'https://github.com/yankeguo/EmptyWar/releases/download/v3.0.0/EmptyWar.war'
 
 ENV TOMCATCFG_SERVER_CONNECTOR_port="8080"
 ENV TOMCATCFG_SERVER_CONNECTOR_protocol="HTTP/1.1"
