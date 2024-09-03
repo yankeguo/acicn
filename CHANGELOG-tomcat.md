@@ -1,3 +1,8 @@
+## tomcat:8-240903-1628
+
+- `minit:1.16.0`
+- `LANG` to `zh_CN.UTF-8`
+
 ## tomcat:8-240827-1515
 
 - Complete read-only root filesystem support
