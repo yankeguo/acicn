@@ -1,7 +1,8 @@
-FROM ghcr.io/yankeguo/minit:1.15.2 AS utils-minit
+FROM ghcr.io/yankeguo/minit:1.16.0 AS utils-minit
 
 FROM debian:12
 
+ENV LANG="zh_CN.UTF-8"
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && \
