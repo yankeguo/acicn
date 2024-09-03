@@ -1,3 +1,7 @@
+## jdk:8-240903-1619
+
+- From `jdk:base-240903-1616`
+
 ## jdk:base-240903-1616
 
 - change `LANG` to `zh_CN.UTF-8`
