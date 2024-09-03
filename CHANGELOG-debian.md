@@ -1,3 +1,8 @@
+## debian:12-240903-1613
+
+- `minit:1.16.0`
+- Update `LANG` to `zh_CN.UTF-8`
+
 ## debian:12-240826-1115
 
 - clean environment variable
