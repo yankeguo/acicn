@@ -1,3 +1,8 @@
+## jdk:base-240903-1616
+
+- change `LANG` to `zh_CN.UTF-8`
+- `minit:1.16.0`
+
 ## jdk:11-240826-1221
 
 - From `jdk:base-240826-1203`
