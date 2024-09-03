@@ -1,5 +1,5 @@
 FROM ghcr.io/yankeguo/acicn/assets:skywalking-agent-custom-20231214-3 AS utils-skywalking-agent-custom
-FROM ghcr.io/yankeguo/acicn/debian:12-240826-1115
+FROM ghcr.io/yankeguo/acicn/debian:12-240903-1613
 
 # Adoptium Repository
 RUN apt-get update && \
