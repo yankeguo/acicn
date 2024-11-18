@@ -1,3 +1,7 @@
+## jdk:base-241118-1651
+
+- Add `opentelemetry-javaagent`
+
 ## jdk:21-20240910-0954
 
 - From `jdk:base-240903-1616`
