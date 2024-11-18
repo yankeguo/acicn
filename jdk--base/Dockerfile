@@ -31,6 +31,10 @@ ADD etc/jmx_prometheus_javaagent /opt/etc/jmx_prometheus_javaagent
 # Skywalking JavaAgent
 COPY --from=utils-skywalking-agent-custom /opt/lib/skywalking-agent /opt/lib/skywalking-agent
 
+
+# OpenTelemetry JavaAgent
+RUN curl -sSL -o /opt/lib/opentelemetry-javaagent.jar "https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/download/v2.10.0/opentelemetry-javaagent.jar"
+
 # Stress
 RUN curl -sSL -o /opt/EmptyJar.jar "https://github.com/yankeguo/EmptyJar/releases/download/v2.0.0/EmptyJar.jar"
 ADD stress.sh /stress.sh
