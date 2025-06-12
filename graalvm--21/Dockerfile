@@ -1,4 +1,4 @@
-FROM ghcr.io/yankeguo/acicn/jdk:base-241118-1651
+FROM ghcr.io/yankeguo/acicn/jdk:base-250612-1040
 
 ENV JAVA_VERSION=21
 ENV GRAALVM_VERSION=21.0.2
