@@ -3,7 +3,7 @@ FROM ghcr.io/yankeguo/acicn/debian:12-240903-1613
 
 # Adoptium Repository
 RUN apt-get update && \
-    apt-get install -y apt-transport-https gpg telnet && \
+    apt-get install -y apt-transport-https gpg telnet fontconfig fonts-dejavu && \
     curl -sSL 'https://packages.adoptium.net/artifactory/api/gpg/key/public' | gpg --dearmor > /etc/apt/trusted.gpg.d/adoptium.gpg && \
     echo 'deb https://packages.adoptium.net/artifactory/deb bookworm main' > /etc/apt/sources.list.d/adoptium.list && \
     rm -rf /var/lib/apt/lists/*

@@ -25,7 +25,7 @@ case "$1" in
     git push origin --delete "$2"
     ;;
 "build")
-    docker build -t "acicn-$(basename $(pwd))" .
+    docker build --platform linux/amd64 -t "acicn-$(basename $(pwd))" .
     ;;
 "run")
     shift
