@@ -1,0 +1,20 @@
+name: tomcat-work
+kind: once
+order: 10
+shell: "/bin/bash"
+command:
+  - mkdir -p /work/tomcat
+  - cp -rn /usr/local/tomcat/* /work/tomcat
+---
+name: tomcat-render
+kind: render
+order: 20
+files:
+  - /work/tomcat/conf.template:/work/tomcat/conf
+---
+name: tomcat
+kind: daemon
+dir: /work/tomcat
+command:
+  - ./bin/catalina-wrapper.sh
+  - run
