@@ -1,3 +1,7 @@
+## tomcat:8-250709-1550
+
+- Add `opentelemetry-javaagent`
+
 ## tomcat:8-240903-1628
 
 - `minit:1.16.0`
