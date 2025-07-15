@@ -1,3 +1,7 @@
+## jdk:base-250612-1040
+
+- Add 'font-config' and 'font-dejavue'
+
 ## jdk:8-241118-1654
 
 - From `jdk:base-241118-1651`
