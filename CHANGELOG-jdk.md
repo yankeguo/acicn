@@ -1,3 +1,19 @@
+## jdk:8-250715-1031
+
+- From `jdk:base-250612-1040` (Add 'font-config' and 'font-dejavue')
+
+## jdk:11-250715-1031
+
+- From `jdk:base-250612-1040` (Add 'font-config' and 'font-dejavue')
+
+## jdk:17-250715-1031
+
+- From `jdk:base-250612-1040` (Add 'font-config' and 'font-dejavue')
+
+## jdk:21-250715-1031
+
+- From `jdk:base-250612-1040` (Add 'font-config' and 'font-dejavue')
+
 ## jdk:base-250612-1040
 
 - Add 'font-config' and 'font-dejavue'
