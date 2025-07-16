@@ -1,4 +1,4 @@
-FROM ghcr.io/yankeguo/minit:1.16.0 AS utils-minit
+FROM ghcr.io/yankeguo/minit:1.16.1 AS utils-minit
 
 FROM debian:12
 
