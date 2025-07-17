@@ -1,3 +1,7 @@
+## jdk:base-250717-1003
+
+- 'arm64' support
+
 ## jdk:8-250715-1031
 
 - From `jdk:base-250612-1040` (Add 'font-config' and 'font-dejavue')
