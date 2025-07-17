@@ -1,3 +1,7 @@
+## jdk:8-250717-1014
+
+- 'arm64' support
+
 ## jdk:base-250717-1003
 
 - 'arm64' support
