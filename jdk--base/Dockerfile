@@ -1,5 +1,5 @@
 FROM ghcr.io/yankeguo/acicn/assets:skywalking-agent-custom-20231214-3 AS utils-skywalking-agent-custom
-FROM ghcr.io/yankeguo/acicn/debian:12-240903-1613
+FROM ghcr.io/yankeguo/acicn/debian:12-250716-1739
 
 # Adoptium Repository
 RUN apt-get update && \
@@ -7,8 +7,6 @@ RUN apt-get update && \
     curl -sSL 'https://packages.adoptium.net/artifactory/api/gpg/key/public' | gpg --dearmor > /etc/apt/trusted.gpg.d/adoptium.gpg && \
     echo 'deb https://packages.adoptium.net/artifactory/deb bookworm main' > /etc/apt/sources.list.d/adoptium.list && \
     rm -rf /var/lib/apt/lists/*
-
-ENV LD_LIBRARY_PATH="/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/local/lib/x86_64-linux-gnu"
 
 ADD scripts/java-wrapper /opt/bin/java-wrapper
 
