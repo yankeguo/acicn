@@ -1,6 +1,6 @@
-FROM tomcat:8.5.100 AS upstream
+FROM tomcat:8.5.100-jre8 AS upstream
 
-FROM ghcr.io/yankeguo/acicn/jdk:8-241118-1654
+FROM ghcr.io/yankeguo/acicn/jdk:8-250717-1019
 
 # vanilla tomcat
 COPY --from=upstream /usr/local/tomcat /usr/local/tomcat
