@@ -1,3 +1,8 @@
+## tomcat:8-250718-1059
+
+- 'arm64' support
+- From `jdk:8-250717-1019` (fontconfig, font-dejavue)
+
 ## tomcat:8-250709-1550
 
 - Add `opentelemetry-javaagent`
