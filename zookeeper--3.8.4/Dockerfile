@@ -1,4 +1,4 @@
-FROM ghcr.io/yankeguo/acicn/debian:12-240731-1022
+FROM ghcr.io/yankeguo/acicn/debian:12-250716-1739
 
 ENV JAVA_VERSION=17
 ENV JRE_VERSION="${JAVA_VERSION}"
@@ -12,8 +12,7 @@ RUN apt-get update && \
     apt-get install -y "temurin-${JDK_VERSION}-jdk" && \
     rm -rf /var/lib/apt/lists/*
 
-ENV LD_LIBRARY_PATH="/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/local/lib/x86_64-linux-gnu"
-ENV JAVA_HOME="/usr/lib/jvm/temurin-${JDK_VERSION}-jdk-amd64"
+ENV JAVA_HOME="/usr/lib/jvm/temurin-${JDK_VERSION}-jdk-${TARGETARCH}"
 
 RUN "${JAVA_HOME}/bin/java" -version && echo "JAVA_HOME: OK"
 

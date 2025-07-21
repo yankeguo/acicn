@@ -8,7 +8,7 @@ RUN apt-get update && \
     apt-get install -y "temurin-${JDK_VERSION}-jdk" && \
     rm -rf /var/lib/apt/lists/*
 
-ENV JAVA_HOME="/usr/lib/jvm/temurin-${JDK_VERSION}-jdk-amd64"
+ENV JAVA_HOME="/usr/lib/jvm/temurin-${JDK_VERSION}-jdk-${TARGETARCH}"
 
 RUN "${JAVA_HOME}/bin/java" -version && \
     java -version && \
