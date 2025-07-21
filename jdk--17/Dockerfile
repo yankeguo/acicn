@@ -1,4 +1,6 @@
-FROM ghcr.io/yankeguo/acicn/jdk:base-250612-1040
+FROM ghcr.io/yankeguo/acicn/jdk:base-250717-1003
+
+ARG TARGETARCH
 
 ENV JAVA_VERSION=17
 ENV JRE_VERSION="${JAVA_VERSION}"
