@@ -1,0 +1,12 @@
+name: agenthub
+kind: once
+shell: "/bin/bash -eu"
+dir: /opt/agenthub
+command:
+    - export ENABLE_NODE_LOG=NO
+    - node generate-config.js
+    - if [ -f config.json ]; then
+    -   exec agenthub start config.json
+    - else
+    -   echo "没有生成 /opt/agenthub/config.json 文件，检查是否设置环境变量 APP_ID 和 APP_SECRET，跳过启动 agenthub"
+    - fi

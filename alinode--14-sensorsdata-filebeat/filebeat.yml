@@ -1,0 +1,27 @@
+filebeat:
+    shutdown_timeout: 5s
+{{if .Env.SENSORSDATACFG_PATHS}}
+    inputs:
+    - type: log
+      paths:
+{{range (stringsSplit .Env.SENSORSDATACFG_PATHS ";")}}
+      - {{strconvQuote .}}
+{{end}}
+{{end}}
+
+{{if .Env.SENSORSDATACFG_LOGSTASH_HOSTS}}
+output:
+    logstash: 
+        hosts:
+{{range (stringsSplit .Env.SENSORSDATACFG_LOGSTASH_HOSTS ";")}}
+        - {{strconvQuote .}}
+{{end}}
+{{end}}
+logging:
+    to_files: true
+    files:
+      path: /var/log/filebeat
+      name: filebeat
+      rotateeverybytes: 10485760
+      keepfiles: 3
+    to_stderr: false

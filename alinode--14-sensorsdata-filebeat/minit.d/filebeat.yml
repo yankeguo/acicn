@@ -1,0 +1,13 @@
+name: render-filebeat-yaml
+kind: render
+raw: true
+files:
+    - /opt/filebeat/filebeat.yml
+---
+name: filebeat
+kind: daemon
+dir: /opt/filebeat
+command:
+    - "./filebeat"
+    - "-c"
+    - "filebeat.yml"
