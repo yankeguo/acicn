@@ -6,9 +6,9 @@ ENV NODE_VERSION=14
 ENV ALINODE_VERSION=6.8.1
 
 RUN if [ "$TARGETARCH" = "amd64" ]; then \
-        curl -sSLo alinode.tar.gz "https://registry.npmmirror.com/-/binary/alinode/v${ALINODE_VERSION}/alinode-v${ALINODE_VERSION}-linux-x64.tar.gz"; \
+    curl -sSLo alinode.tar.gz "https://registry.npmmirror.com/-/binary/alinode/v${ALINODE_VERSION}/alinode-v${ALINODE_VERSION}-linux-x64.tar.gz"; \
     else \
-        curl -sSLo alinode.tar.gz "https://registry.npmmirror.com/-/binary/alinode/v${ALINODE_VERSION}/alinode-v${ALINODE_VERSION}-linux-arm64.tar.gz"; \
+    curl -sSLo alinode.tar.gz "https://registry.npmmirror.com/-/binary/alinode/v${ALINODE_VERSION}/alinode-v${ALINODE_VERSION}-linux-arm64.tar.gz"; \
     fi && \
     mkdir -p "/opt/node-${NODE_VERSION}" && \
     tar -xf alinode.tar.gz -C "/opt/node-${NODE_VERSION}" --strip-components=1 && \
@@ -29,10 +29,10 @@ ADD agenthub /opt/agenthub
 
 ENV FILEBEAT_VERSION=7.12.1
 
-RUN if [ "$TARGETARCH" == "amd64" ]; then \
-        curl -sSLo filebeat.tar.gz "https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-${FILEBEAT_VERSION}-linux-x86_64.tar.gz"; \
+RUN if [ "$TARGETARCH" = "amd64" ]; then \
+    curl -sSLo filebeat.tar.gz "https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-${FILEBEAT_VERSION}-linux-x86_64.tar.gz"; \
     else \
-        curl -sSLo filebeat.tar.gz "https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-${FILEBEAT_VERSION}-linux-arm64.tar.gz"; \
+    curl -sSLo filebeat.tar.gz "https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-${FILEBEAT_VERSION}-linux-arm64.tar.gz"; \
     fi && \
     mkdir -p /opt/filebeat && \
     tar -xf filebeat.tar.gz -C /opt/filebeat --strip-components=1 && \
