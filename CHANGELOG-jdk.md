@@ -1,3 +1,7 @@
+## jdk:base-261026-1557
+
+- debian 13
+
 ## jdk:8-250717-1019
 
 - 'arm64' support
