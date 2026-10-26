@@ -1,4 +1,4 @@
-FROM ghcr.io/yankeguo/acicn/jdk:base-250717-1003
+FROM ghcr.io/yankeguo/acicn/jdk:base-261026-1557
 
 ARG TARGETARCH
 
