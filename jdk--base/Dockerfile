@@ -5,7 +5,7 @@ FROM ghcr.io/yankeguo/acicn/debian:13-261026-1544
 RUN apt-get update && \
     apt-get install -y apt-transport-https gpg telnet fontconfig fonts-dejavu && \
     curl -sSL 'https://packages.adoptium.net/artifactory/api/gpg/key/public' | gpg --dearmor > /etc/apt/trusted.gpg.d/adoptium.gpg && \
-    echo 'deb https://packages.adoptium.net/artifactory/deb bookworm main' > /etc/apt/sources.list.d/adoptium.list && \
+    echo 'deb https://packages.adoptium.net/artifactory/deb trixie main' > /etc/apt/sources.list.d/adoptium.list && \
     rm -rf /var/lib/apt/lists/*
 
 ADD scripts/java-wrapper /opt/bin/java-wrapper
