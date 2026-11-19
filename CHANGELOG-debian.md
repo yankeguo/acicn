@@ -1,3 +1,7 @@
+## debian:13-261119-1156
+
+- full rebuild for Java4Shell / `CVE-2026-114938` fix
+
 ## debian:13-261026-1544
 
 - new debian major version

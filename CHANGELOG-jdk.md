@@ -1,3 +1,27 @@
+## jdk:base-261119-1201
+
+- From `debian:13-261119-1156`
+
+## jdk:8-261119-1204
+
+- From `jdk:base-261119-1201`
+- JDK 8 is not affected by `CVE-2026-114938`; rebuilt with the new base
+
+## jdk:11-261119-1205
+
+- From `jdk:base-261119-1201`
+- JDK 11 is not affected by `CVE-2026-114938`; rebuilt with the new base
+
+## jdk:17-261119-1205
+
+- From `jdk:base-261119-1201`
+- Temurin `17.0.21.1+2`, package `17.0.21.1.0+2-0`, fixes `CVE-2026-114938`
+
+## jdk:21-261119-1205
+
+- From `jdk:base-261119-1201`
+- Temurin `21.0.13.1+2`, package `21.0.13.1.0+2-0`, fixes `CVE-2026-114938`
+
 ## jdk:17-261026-1602
 
 - debian 13
