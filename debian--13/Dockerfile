@@ -4,6 +4,7 @@ FROM debian:13
 
 ENV LANG="zh_CN.UTF-8"
 ENV DEBIAN_FRONTEND=noninteractive
+ENV CACHE_BUST="2026-11-19-java4shell"
 
 RUN apt-get update && \
     apt-get upgrade -y && \
